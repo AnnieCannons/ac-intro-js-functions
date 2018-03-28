@@ -1,22 +1,22 @@
-# AnnieCannons Introduction to the Terminal, Git, and Github
+# AnnieCannons Introduction to Functions in JavaScript
 
-This module will introduce how to use the command line on your computer. This will also cover using Git, a version control software, and Github, a website that will allow us to create remote code repositories. It includes:
+This module will introduce JavaScripts Functions, the building blocks for effective and efficient programs in computer science. It includes:
 
 <ul>
-<li>Accessing the Command Line</li>
-<li>Creating and moving files in the terminal</li>
-<li>Understanding the file system</li>
-<li>Version Control and distributed systems</li>
-<li>Using Git</li>
-<li>Creating local repositories</li>
-<li>Linking to remore repos (Github)</li>
-<li>Pushing, pulling, and committing!</li>
-<li>Using Sourcetree</li>
-<li>Creating your algorithms folder</li>
+<li>Computer Science Priciples</li>
+<li>What is a Function?</li>
+<li>Executing a Function</li>
+<li>Function Expressions and Function Declarations</li>
+<li>'Return' Statements</li>
+<li>Parameters and Arguments</li>
+<li>Function Exercises</li>
+<li>Scope</li>
+<li>ES6 Arrow Functions</li>
 </ul>
 
 # Resources
-1) <a href="https://www.git-tower.com/blog/command-line-cheat-sheet/">CLI CheatSheet</a>
+JS for Cats: http://jsforcats.com/#values
+Kyle Simpson: You Don't Know JS https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md
 
   ## For contributors
 
