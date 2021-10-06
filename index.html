@@ -9,11 +9,13 @@
 	<meta name="description" content="AnnieCannons class slides">
 	<meta name="author" content="AnnieCannons">
 
+    <link rel="icon" type="image/png" href="images/AC_Asterisk.png">
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/league.css">
 
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/classcolors.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -32,15 +34,25 @@
         <h1>Functions</h1>
     </section>
 
-    <section>
+    <!-- <section>
         <h2>Introduction to JS Functions Review Study Guide</h2>
         <p>Click <a href="https://docs.google.com/document/d/1QOKH8tDiTjekZtPRZmU1h0uoJ-fdAuja7KI37UI9YPQ/edit?usp=sharing" target="_blank">here</a></p>
+    </section> -->
+
+    <section>
+        <h2>Unit Overview</h2>
+        <ul>
+            <li>Computer Programming Concepts</li>
+            <li>Writing and Executing Functions</li>
+            <li>Inputs and Outputs from Functions</li>
+            <li>Scope</li>
+        </ul>
     </section>
 
     <section>
         <h2>Computer Programming: Key Concepts</h2>
         <p class="fragment">One of the most magnificent structures in the computer science world is the function.</p>
-        <p class="fragment" style="color:#77A58F">Functions (sometimes called procedures) are mini-programs that you can use over and over inside of your bigger program.</p>
+        <p class="fragment lightgreen">Functions (sometimes called procedures) are mini-programs that you can use over and over inside of your bigger program.</p>
         <p class="fragment">Functions are pieces of code that you can call over and over again.</p>
     </section>
     
@@ -48,9 +60,9 @@
         <h2>Real Life Example</h2>
         <ul>
             <li class="fragment">Consider song lyrics, when there is a chorus that repeats throughout the song.</li>
-            <li class="fragment">What is a more efficient way of writing the song lyrics?</li>
+            <li class="fragment lightgreen">What is a more efficient way of writing the song lyrics?</li>
             <li class="fragment">Click <a href="https://docs.google.com/document/d/1nBu3PnfwFiCoLhxcl6JMY0Rj_LeiI7UAicCBBnTdhWw/edit?usp=sharing" target="_blank">here</a> to refactor this song!</li>
-            <li class="fragment">Hint: Try highlighting the lines that repeat. After the first chorus, replace the remaining choruses with the word "CHORUS" instead.</li>
+            <li class="fragment lightgreen">Hint: Try highlighting the lines that repeat. After the first chorus, replace the remaining choruses with the word "CHORUS" instead.</li>
         </ul>
     </section>
 
@@ -58,37 +70,47 @@
         <h2>Functions</h2>
         <ul>
             <li class="fragment">Efficiency</li>
-            <li class="fragment">Timely identification and correction of bugs in the code.</li>
+            <li class="fragment lightgreen">Timely identification and correction of bugs in the code.</li>
             <li class="fragment">Able to use the code in other projects easily.</li>
-            <li class="fragment">Use a language to express a solution to a problem.</li>
+            <li class="fragment lightgreen">Use a language to express a solution to a problem.</li>
         </ul>
 	</section>
 	
 	<section>
         <h2>Functions and JavaScript</h2>
         <p class="fragment">Functions are at the heart of JavaScript. They let you write code that you can quickly use again and again.</p>
-        <p class="fragment"><span style="color:yellow">Remember!</span>: Our song exercise at the beginning of class? The chorus acts like a function that you can call over and over when you want the singer to sing those lyrics. What are some real life functions?</p>
+        <p class="fragment"><span style="color:yellow">Remember!</span> Our song exercise at the beginning of class? The chorus acts like a function that you can call over and over when you want the singer to sing those lyrics. What are some real life functions?</p>
         <ul>
             <li class="fragment">Coffee shop example</li>
             <li class="fragment">Sending a text message</li>
             <li class="fragment">Driving to the store</li>
         </ul>
+        <aside class="notes">Coffee shop example: you are sending a personal assistant to fetch your coffee given time of day, route to coffee shop, the coffee order, the way back to your office, and finally returning with the coffee in hand</aside>
     </section>
 
+    <section>
+        <h2>Unit Overview</h2>
+        <ul>
+            <li class="green">Computer Programming Concepts</li>
+            <li>Writing and Executing Functions</li>
+            <li>Inputs and Outputs from Functions</li>
+            <li>Scope</li>
+        </ul>
+    </section>
 
     <section>
         <h2>Let's talk about syntax</h2>
-        <p>The following is how you write a function:</p>
+        <p>The following is how you declare a function:</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>         
 function functionName() {
-	//code you want to repeat
+  //code you want to repeat
 }
 </pre></code> 
         <p class="fragment">Name a function like you name a variable. Best practices:</p>
         <ul class="fragment">
-            <li>The name gives context/sense and references the function's purpose. Examples: makeLunch, canVote, getTea.
+            <li>The name gives context/sense and references the function's purpose. Examples: <span class="aqua">makeLunch</span>, <span class="aqua">canVote</span>, <span class="aqua">getTea</span>.
             </li>
-            <li>Notice that camel case is used: camelCase.</li>
+            <li class="lightgreen">Notice that camel case is used: camelCase.</li>
         </ul>
         <p class="fragment">Function names cannot start with a number.</p>
         <p class="fragment">Everything within the curly braces is the <span style="color:yellow;">code block</span>.</p>
@@ -96,26 +118,26 @@ function functionName() {
 
     <section>
         <h2>Running a Function</h2>
-        <p>The code in the code block only runs when the function is activated:</p>
+        <p>The code in the code block only runs when the function is activated. How do we run the code block in <span class="aqua">myGreeting</span>?</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>  
 function myGreeting() {
-    alert("Good morning!");
+  alert("Good morning!");
 }
 </pre></code> 
-        <p class="fragment">To activate our code block, we need to <span style="color: yellow;">call</span> the function. You do it like this:</p>
+        <p class="fragment">To activate our code block, we need to <span style="color: yellow;">call</span> the function housing the code block. You call the function like so:</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>  
 myGreeting();
 </pre></code> 
-        <p class="fragment">The parentheses are what actually call the function. They are very important!</p>
+        <p class="fragment">The <span class="orange">parentheses</span> <code class="aqua">()</code> are what actually call the <span class="aqua">myGreeting</span> function. Parentheses <code class="aqua">()</code> are very important!</p>
     </section>
 
     <section>
         <h2>Function</h2>
-        <p>In summary, Functions are re-usable collections of statements.</p>
+        <p>In summary, <span class="orange">functions</span> are re-usable collections of statements.</p>
         <p>First, declare the function:</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>  
 function sayMyName() {
-    console.log('Hi Jessica!');
+  console.log('Hi Jessica!');
 }
 </pre></code> 
         <p class="fragment">Then call it (as many times as you want): </p>
@@ -125,7 +147,7 @@ sayMyName();
     </section>
 
     <section>
-        <h2>Example in JSBin</h2>
+        <h2>Example in JS Bin or Console</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>  
 //Create your function first
 function alertRandom() {
@@ -142,8 +164,8 @@ alertRandom();
         <h2>Calling a function more than once:</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>  
 function alertRandom() {
-    let randomNumber = Math.floor(Math.random()*6)+1;
-    alert(randomNumber);
+  let randomNumber = Math.floor(Math.random()*6)+1;
+  alert(randomNumber);
 }
 alertRandom();
 alertRandom();
@@ -156,22 +178,22 @@ alertRandom();
         <h2>Variables and Functions</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>  
 var alertRandom = function() {
-    let randomNumber = Math.floor(Math.random()*6)+1;
-    alert(randomNumber);
+  let randomNumber = Math.floor(Math.random()*6)+1;
+  alert(randomNumber);
 };
 </pre></code> 
     <ul>
         <li class="fragment">This is an anonymous function and will run as part of the variable.</li>
-        <li class="fragment">Notice we declare a variable, and assign a function to its value.</li>
+        <li class="fragment lightgreen">Notice we declare a variable, and assign a function to its value.</li>
         <li class="fragment">We end this statement with a semi-colon.</li>
-        <li class="fragment">How would we call this function? </li>
+        <li class="fragment lightgreen">How would we call this function? </li>
     </ul>    
     </section>
 
     <section>
         <h2>Function Expressions and Declarations</h2>
         <img src="images/expression.png" alt="Expression vs Declaration">
-        <p class="fragment">Read more <a href="https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052#:~:text=Function%20Expression%20VS.&text=Declarations%20are%20loaded%20before%20any%20code%20can%20run.&text=Function%20declarations%20load%20before%20any,the%20top%20of%20other%20code." target="_blank">here!</a> </p>
+        <!-- <p class="fragment">Read more <a href="https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052#:~:text=Function%20Expression%20VS.&text=Declarations%20are%20loaded%20before%20any%20code%20can%20run.&text=Function%20declarations%20load%20before%20any,the%20top%20of%20other%20code." target="_blank">here!</a> </p> -->
     </section>
 
     <section>
@@ -179,31 +201,32 @@ var alertRandom = function() {
         <p>Which of the following describes a function?</p>
         <ol>
             <li>A function means the same things as a JavaScript program.</li>
-            <li>A function lets you store a block of code that you can use over and over again.</li>
+            <li class="lightgreen">A function lets you store a block of code that you can use over and over again.</li>
             <li>A function is used to add decision-making to your program.</li>
-            <li>A function is used to hold similar pieces of information, like a database.</li>
+            <li class="lightgreen">A function is used to hold similar pieces of information, like a database.</li>
         </ol>
+        <aside class="notes">Answer: #2 is always completely correct.</aside>
     </section>
 
     <section>
         <h2>Review</h2>
         <p>Which of the following code snippets correctly shows how to create a function named <code style="color: turquoise;">sayHello</code> which opens an alert dialog with the string "Hello" in it?</p>
-<pre class="fragment"><code class="js" data-trim contenteditable>  
+<pre class="fragment" style="border: 1px solid red"><code class="js" data-trim contenteditable>  
 function sayHello {
     alert("Hello");
 }
 </pre></code>   
- <pre class="fragment"><code class="js" data-trim contenteditable>  
+ <pre class="fragment" style="border: 1px solid orange"><code class="js" data-trim contenteditable>  
 function sayHello (
     alert("Hello");
 )
 </pre></code>  
- <pre class="fragment"><code class="js" data-trim contenteditable>  
+ <pre class="fragment" style="border: 1px solid yellow"><code class="js" data-trim contenteditable>  
 function sayHello() {
     alert("Hello");
 }
 </pre></code>  
- <pre class="fragment"><code class="js" data-trim contenteditable>  
+ <pre class="fragment" style="border: 1px solid lightseagreen"><code class="js" data-trim contenteditable>  
 var function=sayHello() {
     alert("Hello");
 }
@@ -213,7 +236,10 @@ var function=sayHello() {
 
     <section>
             <h2>Coding Conventions: Spacing </h2>
-            <p>Use new lines between statements and use spaces to show blocks.</p>
+            <ul>
+                <li>Use new lines between statements.</li>
+                <li class="lightgreen">Use spaces to show blocks.</li>
+            </ul>
             <p class="fragment">Bad:</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>  
 function addNumbers() {return num1 + num2;}
@@ -228,9 +254,20 @@ function addNumbers() {
 
     <section>
         <h2>Functions change the flow</h2>
-        <p class="fragment">Up until this point, our programs have been running from top to bottom.</p>
-        <p class="fragment">Functions allow the browser interpreter to store information to be sure that proper code is being called depending on the contents of the function.</p>
+        <p class="fragment">Up until this point, our programs have been running from top to bottom in HTML and CSS.</p>
+        <p class="fragment">Functions allow the <span class="yellow">browser interpreter</span> to store information to be sure that proper code is being called depending on the contents of the function.</p>
         <p class="fragment">Many developers write their functions at the beginning of their code, so all of them are grouped together.</p>
+        <aside class="notes">Good time to revisit an external JS file in VS Code to "show" where functions can be grouped together at the beginning of the JS code file.</aside>
+    </section>
+
+    <section>
+        <h2>Unit Overview</h2>
+        <ul>
+            <li class="green">Computer Programming Concepts</li>
+            <li class="green">Writing and Executing Functions</li>
+            <li>Inputs and Outputs from Functions</li>
+            <li>Scope</li>
+        </ul>
     </section>
 
     <section>
@@ -248,29 +285,39 @@ function goToCoffeeShop() {
     <section>
         <h2>Getting information from a function</h2>
         <p class="fragment">‘<span style="color: turquoise;">return</span>’ing something in JavaScript is very useful </p>
-        <p class="fragment">You can use its values for many other parts of your program. Examples: display items on your website, do calculations, etc.</p>
-        <p class="fragment"><span style="color: turquoise;">Return statements</span> should be the last thing in the code block of a function because they immediately exit the function.</p>
-        <p class="fragment">Watch <a href="https://www.youtube.com/watch?v=AdQcd3sKGC8" target="_blank">here</a> for more info! </p>
+        <p class="fragment">You can use its values for many other parts of your program. <span class="orange">Examples: display items on your website, do calculations, etc.</span></p>
+        <p class="fragment"><span style="color: turquoise;">Return statements</span> should be the last thing in the code block of a function, because they immediately <span class="yellow">exit the function</span>.</p>
+        <!-- <p class="fragment">Watch <a href="https://www.youtube.com/watch?v=AdQcd3sKGC8" target="_blank">here</a> for more info! </p> -->
+        <aside class="notes">Demo for returning values is on the next slide.</aside>
     </section>
 
     <section>
         <h2>Return Values</h2>
         <p class="fragment">The <code style="color: turquoise;">return</code> keyword returns a value to whoever calls the function (and exits the function):</p>
-<pre class="fragment"><code class="js" data-trim contenteditable>          
+<!-- <pre class="fragment"><code class="js" data-trim contenteditable>          
 function addNumbers(num1, num2) {
-    let result = num1 + num2;
-    return result; // Anything after this line won't be executed
+  let result = num1 + num2;
+  return result; // Anything after this line won't be executed
 }
 var sum = addNumbers(5, 2);
-</pre></code>
-        <p class="fragment">You can use function calls in expressions:</p>
+</pre></code> -->
+<pre class="fragment"><code class="js" data-trim contenteditable>
+function addNumbers() {
+  var num1 = prompt("What is your favorite number?");
+  var num2 = prompt("What is your second favorite number?");
+  let result = Number(num1) + Number(num2);
+  return result; // Anything after this line won't be executed
+}
+var sum = addNumbers();
+</pre></code> 
+        <!-- <p class="fragment">You can use function calls in expressions:</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>          
 var biggerSum = addNumbers(2, 5) + addNumbers(3, 2);
 </pre></code>
         <p class="fragment">  You can even call functions inside function calls:</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>          
 var hugeSum = addNumbers(addNumbers(5, 2), addNumbers(3, 7));
-</pre></code>
+</pre></code> -->
     </section>
 
     <section>
@@ -285,27 +332,31 @@ function getDay() {
 
 var dayOfWeek = getDay();
 </pre></code>
+        <aside class="notes">Because return exits the function, calling getDay() will result in "Monday" and will be stored in the variable called dayOfWeek.</aside>
     </section>
 
     <section>
         <h2>Washing Machine</h2>
         <p class="fragment">What is the <code style="color: turquoise;">return</code> value of running a load of laundry?</p>
-        <p class="fragment">How is this different than using <code style="color: turquoise;">console.log()</code>?</p>
+        <p class="fragment">How is this different from using <code style="color: turquoise;">console.log()</code>?</p>
+        <aside class="notes">The function will return "clean clothes" and console.log() is kind of like the washing machines with a see-through window that allows us to look at the clean clothes after the wash.</aside>
     </section>
 
     <section>
-        <h2>Create in jsbin</h2>
+        <h2>Create in JS Bin or Console</h2>
         <p class="fragment">1. Create a function named <code style="color: turquoise;">getYear</code>.</p>
-        <p class="fragment">2. Inside the function's code block add this line of code:</p>
-<pre class="fragment"><code class="js" data-trim contenteditable>                 
+        <div class="fragment lightgreen">
+        <p>2. Inside the function's code block add this line of code:</p>
+<pre><code class="js" data-trim contenteditable>                 
 var year = new Date().getFullYear(); 
 </pre></code>
-        <p class="fragment">This creates a new variable and stores the current year in it.</p>
+        <p>This creates a new variable and stores the current year in it.</p>
+        </div>
         <p class="fragment">3. Add a statement that returns the variable. </p>
-        <p class="fragment">4. Call the <code style="color: turquoise;">getYear</code> function & store the returned value in a new variable named <code style="color: turquoise;">yearToday</code>.</p>
+        <p class="fragment lightgreen">4. Call the <code style="color: turquoise;">getYear</code> function & store the returned value in a new variable named <code style="color: turquoise;">yearToday</code>.</p>
         <div class="fragment">
             <img  src="images/exercise.gif" alt="Exercise Gif" style="width: 100px; height: 100px;">
-            <a href="https://trello.com/b/RQrD5Ye2/template-student-journey-phase-24-javascript" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width= "200px"></a>
+            <a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width= "200px"></a>
         </div>
 
     </section>
@@ -318,10 +369,11 @@ var year = new Date().getFullYear();
         <p class="fragment">The argument is stored in a variable called a <span style="color: aqua">parameter</span> that you can use inside the function.</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>                 
 function myFunction(parameter) {
-    //code block
+  //code block
 }
 </pre></code>
-        <p class="fragment"> Parameters act a lot like variables. </p>
+        <p class="fragment">Parameters are variables.</p>
+        <aside class="notes">Adding to the personal assistant sent to fetch coffee at coffee shop example: parameters can be which coffee shop to send the personal assistant to, plus which beverage for the assistant to get. For parameters are variables, remember to do the march-in-place action</aside>
     </section>
 
     <section>
@@ -329,7 +381,7 @@ function myFunction(parameter) {
         <p class="fragment">Passing an argument to a function</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>                 
 function goToTheCoffeeShop(drink) {
-    alert(drink + " is on the way!");
+  alert(drink + " is on the way!");
 }
 goToTheCoffeeShop("Espresso");
 </pre></code>
@@ -347,13 +399,13 @@ goToTheCoffeeShop("Espresso");
         <p>In our example, let’s say I also want something to eat.</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 function goToTheCoffeeShop(drink, pastry) {
-    alert(drink + "and "+ pastry + " are on the way!");
+  alert(drink + "and " + pastry + " are on the way!");
 }
 goToTheCoffeeShop("Espresso", "scone");
 </pre></code>
         <p class="fragment">You can pass different values and get different results!</p>
-        <p class="fragment">You can also have multiple arguments in a function.</p>
-        <p class="fragment">You won’t want to add more than 4 or 5 arguments to a function. This can get tedious. </p></p>
+        <p class="fragment lightgreen">You can also have multiple arguments in a function.</p>
+        <p class="fragment">You want to add <span class="orange">no more than 4 or 5 arguments</span> to a function. This can get tedious. </p></p>
     </section>
 
     <section>
@@ -365,8 +417,8 @@ goToTheCoffeeShop("Espresso", "scone");
             <li class="fragment">How many parameters?</li>
         </ul>     
         <div class="fragment">
-            <img  src="images/exercise.gif" alt="Exercise Gif" style="width: 100px; height: 100px;">
-            <a href="https://trello.com/b/RQrD5Ye2/template-student-journey-phase-24-javascript" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width= "200px"></a>
+            <img src="images/exercise.gif" alt="Exercise Gif" style="width: 100px; height: 100px;">
+            <a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width= "200px"></a>
         </div>
     </section>
 
@@ -375,15 +427,15 @@ goToTheCoffeeShop("Espresso", "scone");
         <p>Functions can accept any number of named arguments:</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 function sayMyName(name) {
-    console.log('Hi, ' + name);
+  console.log('Hi, ' + name);
 }
 sayMyName('Claire');
 sayMyName('Testy McTesterFace');
 </pre></code>
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 function addNumbers(num1, num2) {
-    let result = num1 + num2;
-    console.log(result);
+  let result = num1 + num2;
+  console.log(result);
 }
 addNumbers(7, 21);
 addNumbers(3, 10);
@@ -400,12 +452,12 @@ addNumbers(number, 4);
         <h2>Fun with Functions</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>                               
 var nameImprover = function(name, adj) {
-    return 'Col ' + name + ' Mc' + adj + ' pants';
+  return 'Col ' + name + ' Mc' + adj + ' pants';
 };
 </pre></code>
     <ul>
         <li class="fragment">How would we run this function?</li>
-        <li class="fragment">How can we see the result in the console?</li>
+        <li class="fragment lightgreen">How can we see the result in the console?</li>
         <li class="fragment">How many arguments does this function take in?</li>
     </ul>
     </section>
@@ -414,47 +466,51 @@ var nameImprover = function(name, adj) {
         <h2>Return vs Console.log()</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>                         
 var nameImprover = function(name, adj) {
-	return 'Col ' + name + ' Mc' + adj + ' pants';
+  return 'Col ' + name + ' Mc' + adj + ' pants';
 };	
 
 var nameLogger = function(name, adj) {
-	let newName = 'Col ' + name + ' Mc' + adj + ' pants';
-	console.log(newName); 
+  let newName = 'Col ' + name + ' Mc' + adj + ' pants';
+  console.log(newName); 
 };
 </pre></code>
     <p class="fragment">Read here for more on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return" target="_blank">return</a> keyword</p>
-    <p class="fragment">Read here for more on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/log"  target="_blank">console.log()</a> method </p>
+    <p class="fragment">Read here for more on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/log"  target="_blank">console.log()</a> method</p>
     </section>
 
     <section>
-        <h2>Arguments Keyword</h2>
+        <h2>Note on console.log()</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>                                 
 var addTwo = function(a, b) {
-	console.log(arguments); // logs [3,10]
-	return a + b; 
+  console.log(a,b); // logs 3,10
+  return a + b; 
 };
 
 addTwo(3, 10); // 13
 </pre></code>
         <p class="fragment">Why would a developer use the <code style="color: turquoise;">console.log()</code> method in the <code style="color: turquoise;">addTwo</code> function in the development phase?</p>
         <p class="fragment">Why would a developer remove the <code style="color: turquoise;">console.log()</code> method in the <code style="color: turquoise;">addTwo</code> function for the production phase?</p>
-    </section>
-
-    <section>
-        <h2>More on Variables</h2>
-        <p class="fragment">As you create more complex programs, you'll end up adding multiple functions to your scripts.</p>
-        <p class="fragment">It's possible, even likely, that a function defines and uses the same name as a variable used elsewhere in your script.</p>
-        <h3 class="fragment">Area Example:</h3>
-        <p class="fragment">You might write some JavaScript with a variable named “width”, but also have a function named <code style="color: turquoise;">computeArea</code> that also has a <code style="color: turquoise;">width</code> variable inside it.</p>
+        <aside class="notes">Dev phase: as a way to reference the code to debug, confirming the right variable values are being passed into the function. Production phase: for cleaning code so program overall has fewer lines and for security reasons so people are not seeing variable values when they’re not supposed to see those variable values.
+</aside>
     </section>
 
     <section>
         <h2>JavaScript can handle it!</h2>
         <p class="fragment">JavaScript can handle multiple functions.</p>
-        <p class="fragment">Each function acts like its own individual universe.</p>
+        <p class="fragment lightgreen">Each function acts like its own individual universe.</p>
         <p class="fragment">The variables created in one universe do not interact with the variables created in another universe or another function.</p>
         <img class="fragment" src="images/stars.png" width="200px" alt="Galaxy Image">
-        <p class="fragment">This means that functions are a wonderful tool to use when coding with security in mind.</p>
+        <p class="fragment lightgreen">This means that functions are a wonderful tool to use when coding with security in mind.</p>
+    </section>
+
+    <section>
+        <h2>Unit Overview</h2>
+        <ul>
+            <li class="green">Computer Programming Concepts</li>
+            <li class="green">Writing and Executing Functions</li>
+            <li class="green">Inputs and Outputs from Functions</li>
+            <li>Scope</li>
+        </ul>
     </section>
 
     <section>
@@ -465,15 +521,16 @@ addTwo(3, 10); // 13
         <h2>Variable Scope</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable> 
 function greeting() {
-    let person= "Lilah";
-    alert(person);
+  let person= "Lilah";
+  alert(person);
 }
 
 var person = "George";
 greeting();
 alert(person);
 </pre></code>
-    <img data-enlargable style="border: 5px solid blue; cursor: zoom-in;" width="350px" class="fragment" src="images/alerts.png" alt="Alerts">
+        <img data-enlargable style="border: 5px solid blue; cursor: zoom-in;" width="350px" class="fragment" src="images/alerts.png" alt="Alerts">
+        <aside class="notes">First, walk through each line of code to see what it’s doing, and then reveal the visual to confirm.</aside>
     </section>
 
     <section>
@@ -481,28 +538,43 @@ alert(person);
         <!-- <img src="images/global.png" alt="Global vs Local"> -->
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 function greeting() {
-    let person = "Lilah";
+  let person = "Lilah";
     alert(person);
-    }
+  }
 var person = "George"
 greeting();
 alert(person);
     </pre></code>
+        <aside class="notes">There are a few variable declarations in this block of code. One is global and one is local. Keep these takeaways in mind for trainees.</aside>
     </section>
 
     <section>
         <h2>GLobal vs Local</h2>
-        <p class="fragment">LOCAL: A variable declared in a function only lives inside that function and cannot be accessed or changed outside of that function and has therefore <span style="color: yellow">local scope</span>.</p>
-        <p class="fragment">GLOBAL: Any variables you create in a script that are not contained in a function are in this bigger universe called the <span style="color: yellow">global scope</span>.</p>
-        <p class="fragment"><b>**All functions can access the global scope.</b></p>
-        <p class="fragment">The word “<span style="color: yellow">scope</span>” refers to where a variable is visible and accessible.</p>
+        <p class="fragment"><span class="orange">LOCAL</span>: A variable declared in a function only lives inside that function and cannot be accessed or changed outside of that function and has therefore <span style="color: yellow">local scope</span>.</p>
+        <p class="fragment"><span class="orange">GLOBAL</span>: Any variables you create in a script that are not contained in a function are in this bigger universe called the <span style="color: yellow">global scope</span>.</p>
+        <p class="fragment lightgreen"><b>**All functions can access the global scope.</b></p>
+        <p class="fragment">The word “<span style="color: yellow">scope</span>” refers to where a variable is declared.</p>
+    </section>
+
+    <section>
+        <h2>More on Variables</h2>
+        <p class="fragment">As you create more complex programs, you'll end up adding <span class="orange">multiple functions</span> to your scripts.</p>
+        <p class="fragment lightgreen">It's possible, even likely, that a function defines and uses the same name as a variable used elsewhere in your script.</p>
+        <h3 class="fragment">Area Example:</h3>
+        <p class="fragment">You might write some JavaScript with a variable named “<span class="aqua">width</span>”, but also have a function named <code class="aqua">computeArea</code> that also has a <code class="aqua">width</code> variable inside it. More on this later.</p>
+<pre class="fragment"><code class="js" data-trim contenteditable>                                 
+var width = 6;
+var computeArea = function(width) {
+  return width * width; 
+};
+</pre></code>
     </section>
 
     <section>
         <h2>Things to remember</h2>
-		<p class="fragment">1. As long as you use the <code style="color: turquoise;">var</code> keyword to create the variable, the variable will only be used in the program when its parent function is executing.</p>
-        <p class="fragment">2. You can use the <code style="color: turquoise;">let</code> keyword to declare variables inside of functions. This means that they are <span style="color: yellow;">block scoped</span>.</p>
-        <p class="fragment">3. You use the <code style="color: turquoise;">const</code> keyword to declare variables whose values cannot be reassigned. These will often be global variables.</p>
+		<p class="fragment">1. You can use the <code style="color: turquoise;">var</code> keyword to declare variables <span class="orange">outside</span> of functions. These <span class="orange">global</span> variables can be used by other functions and variables.</p>
+        <p class="fragment">2. You can use the <code style="color: turquoise;">let</code> keyword to declare variables <span class="orange">inside</span> of functions. These <span class="orange">local</span> variables are <span style="color: yellow;">block scoped</span>.</p>
+        <p class="fragment">3. You can use the <code style="color: turquoise;">const</code> keyword to declare variables whose values cannot be reassigned. These will often be <span class="orange">global</span> variables.</p>
     </section>
 
     <section>
@@ -510,22 +582,23 @@ alert(person);
         <p>A variable with "local" scope:</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 function addNumbers(num1, num2) {
-    let localResult = num1 + num2;
-    console.log("The local result is: " + localResult);
+  let localResult = num1 + num2;
+  console.log("The local result is: " + localResult);
 }
 addNumbers(5, 7);
 console.log(localResult);
 </pre></code>
+        <aside class="notes">The main takeaway is that the local result is not accessible globally and therefore undefined.</aside>
     </section>
 
     <section>
-        <h2>Variable scope</h2>
+        <h2>Variable Scope</h2>
         <p>A variable with "global" scope:</p>
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 var globalResult;
 function addNumbers(num1, num2) {
-    globalResult = num1 + num2;
-    console.log("The global result is: " + globalResult);
+  globalResult = num1 + num2;
+  console.log("The global result is: " + globalResult);
 }
 addNumbers(5, 7);
 console.log(globalResult);
@@ -534,14 +607,14 @@ console.log(globalResult);
 
     <section>
         <h2>How does your browser read your JS code?</h2>
-        <ul>
-            <li class="fragment">Two trips through the code</li>
+        <ul class="fragment">The JavaScript engine takes two passes through the code.
             <ol>
-                <li class="fragment">Figure out and store the variable/function scopes.</li>
-                <li class="fragment">Execute the code.</li>
-                <li class="fragment">Let's watch <a href="https://frontendmasters.com/courses/javascript-foundations/"  target="_blank">this</a>.</li>
+                <li class="fragment lightgreen">First: figure out and store the variable/function scopes.</li>
+                <li class="fragment">Second: execute the code.</li>
+                <!-- This is a Kyle Simpson video with foo and bar references, which can take away from the points he is making. <li class="fragment">Let's watch <a href="https://frontendmasters.com/courses/javascript-foundations/"  target="_blank">this</a>.</li> -->
             </ol>
         </ul>
+        <aside class="notes">Go to the previous slide that has the addNumbers function, discuss the two passes of the JS engine, first pass is variables and functions, second pass is calling the functions.</aside>
     </section>
 
     <section>
@@ -549,12 +622,12 @@ console.log(globalResult);
         <p>Why pay a fortune teller when you can just program one yourself?</p>
         <ul>
             <li>Write a function named <code style="color: turquoise;">tellFortune</code> that:</li>
-            <li>Outputs someone's fortune to the screen like so: "You will be a [job] in [city], and married to [partner's name] with [number] kids."</li>
+            <li class="lightgreen">Outputs someone's fortune to the screen like so: "You will be a [job] in [city], and married to [partner's name] with [number] kids."</li>
             <li>Call that function 3 times with 3 different values for the arguments.</li>
         </ul>
         <div class="fragment">
             <img  src="images/exercise.gif" alt="Exercise Gif" style="width: 100px; height: 100px;">
-            <a href="https://trello.com/b/RQrD5Ye2/template-student-journey-phase-24-javascript" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width= "200px"></a>
+            <a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width= "200px"></a>
         </div>
 </section>
 
@@ -563,15 +636,15 @@ console.log(globalResult);
     <p>Calculate Your Age!</p>
     <ul>
         <li>Write a function named <code style="color: turquoise;">calculateAge</code> that:</li>
-        <li>Takes 2 arguments: birth year, current year.</li>
+        <li class="lightgreen">Takes 2 arguments: birth year, current year.</li>
         <li>Calculates the 2 possible ages based on those years.</li>
-        <li>Outputs the result to the screen like so: "You are either NN or NN years old."</li>
+        <li class="lightgreen">Outputs the result to the screen like so: "You are either NN or NN years old."</li>
         <li>Call the function three times with different sets of values.</li>
-        <li>Bonus: Figure out how to get the current year in JavaScript instead of passing it in as an argument.</li>
+        <li class="lightgreen">Bonus: Figure out how to get the current year in JavaScript instead of passing it in as an argument.</li>
     </ul>
     <div class="fragment">
         <img  src="images/exercise.gif" alt="Exercise Gif" style="width: 100px; height: 100px;">
-        <a href="https://trello.com/b/RQrD5Ye2/template-student-journey-phase-24-javascript" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width= "200px"></a>
+        <a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width= "200px"></a>
     </div>
         </section>
 
@@ -579,8 +652,8 @@ console.log(globalResult);
             <h2>Review</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 var divideByThree = function(number) {
-    let val = number / 3;
-    console.log(val);
+  let val = number / 3;
+  console.log(val);
 };
 </pre></code>
         <p class="fragment">How would you call this function so that 3 is logged to the console?</p>
@@ -590,7 +663,7 @@ var divideByThree = function(number) {
             <h2>Review</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 var greeting = function(name) {
-    console.log("Great to see you," + " " + name + "!");
+  console.log("Great to see you," + " " + name + "!");
 };
 </pre></code>
         <p class="fragment">How would you call this function so that “Great to see you, Grace Hopper!” is logged to the console?</p>
@@ -600,7 +673,7 @@ var greeting = function(name) {
             <h2>Review</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 var foodDemand = function(food) {
-    console.log("I want to eat" + " " + food + ".");
+  console.log("I want to eat" + " " + food + ".");
 };
 </pre></code>
         <p class="fragment">How would you call this function so that “I want to eat Chinese food.” is logged to the console?</p>
@@ -610,8 +683,8 @@ var foodDemand = function(food) {
             <h2>Review</h2>
 <pre class="fragment"><code class="js" data-trim contenteditable>                        
 var coffeeCost = function(cost) {
-    let total = cost * 5;
-    console.log(total);
+  let total = cost * 5;
+  console.log(total);
 }
 </pre></code>
         <p class="fragment">Jessica drinks five cups of coffee a day. How would you call this function if the cost of her coffee is $3?</p>
@@ -632,7 +705,7 @@ alert(name);
 </pre></code>
         </section>
 		
-		<section>
+		<!-- <section>
 			<h2>ES6 and Functions</h2>
             <p class="fragment">ES6 introduces new tools in your JavaScript tool belt.</p>
             <p class="fragment">One of those tools is <span style="color:lightgreen">Arrow Functions</span></p>
@@ -645,7 +718,7 @@ alert(name);
             <p>They also provide some additional tools relating to binding (we will talk about this later).</p>
 <pre><code class="js" data-trim contenteditable>
 function addTwoNumbers(x,y) {
-    return x + y;
+  return x + y;
 }
 
 // versus
@@ -668,10 +741,10 @@ var addTwoNumbers = (x,y) => x + y;
 <pre><code class="js" data-trim contenteditable>
 var funcWithOneExpression = x => x * 2;
 var funcWithMultipleExpressions = (x,y) => {
-    let z = x * 2 + y;
-	y++;
-	x *= 3;
-	return (x + y + z) / 2;
+  let z = x * 2 + y;
+  y++;
+  x *= 3;
+  return (x + y + z) / 2;
 };
 </code></pre>
             <p class="fragment">Arrow functions are always function expressions; there is no arrow function declaration.</p>
@@ -681,17 +754,27 @@ var funcWithMultipleExpressions = (x,y) => {
         <section>
             <h2>Arrow Functions Practice</h2>
             <p>Go to <a href="https://jsbin.com/cacorax/6/edit?js,console" target="_blank">JSBin</a> to refactor functions, using arrow function syntax.</p>
-        </section>
+        </section> -->
 
         <section>
             <h2>Reading Assignment</h2>
+            <p>Please read Chapter 3<br>(no need to worry about pages 106-117)</p>
             <img src="images/javascript-textbook-cover.png" alt="javascript textbook cover" style="width: 300px;">
-            <p>Please read Chapter 3 (no need to worry about pages 106-117)</p>
         </section>
 
-        <section>
+        <!-- <section>
             <h2>Introduction to JS Functions Roundup</h2>
             <p>Click <a href="https://docs.google.com/document/d/1QOKH8tDiTjekZtPRZmU1h0uoJ-fdAuja7KI37UI9YPQ/edit?usp=sharing" target="_blank">here</a></p>
+        </section> -->
+
+        <section>
+            <h2>Unit Overview</h2>
+            <ul>
+                <li class="green">Computer Programming Concepts</li>
+                <li class="green">Writing and Executing Functions</li>
+                <li class="green">Inputs and Outputs from Functions</li>
+                <li class="green">Scope</li>
+            </ul>
         </section>
 
 		<!-- Last Slide -->
